@@ -4,5 +4,8 @@
         "sizes": "(min-width: 50em) 80vw, 100vw",
         "src": "garden.jpeg",
         "widths": [1000, 800, 600, 400, 300]
-    }
+    },
+    "layout": "photo",
+    "permalink": "/{{ page.date | njkDate('YYYY/MM/DD-') + page.fileSlug }}"
+
 }
