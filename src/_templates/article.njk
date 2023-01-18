@@ -1,0 +1,94 @@
+{% extends './base.njk' %}
+
+{%- block stylesheets %}
+    {% if code %}
+        <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css">
+    {%- endif %}
+{%- endblock %}
+
+{% block links %}
+        <link rel="webmention" href="https://webmention.io/btrem.com/webmention">
+        <link rel="pingback" href="https://webmention.io/btrem.com/xmlrpc">
+
+        <link rel="canonical" href="{{ page.url }}">
+
+
+{% endblock %}
+
+{%- block preface %}
+        {%- if articleInfo %}
+        <aside>
+            <p>
+                {{ articleInfo | safe }}
+            </p>
+        </aside>
+        {%- endif %}
+{%- endblock %}
+
+{% block bodyOpeningTag %}
+    <body class="h-entry">
+{% endblock %}
+
+    {% block topH1 %}
+        {%- if subtitle %}
+            <hgroup class="p-name">
+                <h1>{{ title }}</h1>
+                <h2>{{ subtitle }}</h2>
+            </hgroup>
+        {%- else %}
+            <h1 class="p-name">{{ title }}</h1>
+        {%- endif %}
+    {% endblock %}
+
+    {%- block pageDate %}
+        {%- if page.date %}
+            <p>
+                <time class="dt-published" datetime="{{ page.date | njkDate('YYYY-MM-DD') }}">{{ page.date | njkDate('MMMM D, YYYY') }}</time>
+            </p>
+        {%- endif %}
+    {%- endblock %}
+
+    {% block content %}
+        <main class="article article-{{slug}} {{ slug }} {{ mainClass }} e-content">
+
+            {{ content | safe }}
+
+        </main>
+    {% endblock %}
+    {%- block associatedLinks %}
+        <div class="associatedLinks">
+
+            <section class="webmentions">
+
+                <h1>webmentions</h1>
+
+                <section class="webmentionForm">
+
+                    <h1>add your webmention</h1>
+
+                    <p>
+                        Mention, like, or reply to this article from your site using
+                        <a href="https://indieweb.org/Webmention">webmentions</a>.
+                        And if you do, let me know.
+                        Enter the url of <em>your</em> page in the form
+                        below and send it to me.
+                    </p>
+
+                    <form action="https://webmention.io/btrem.com/webmention" method="post">
+                        <label>
+                            <span>your page's url</span>
+                            <input type="url" required name="source" size="30" placeholder="https://example.com"
+                            pattern="(?!https://btrem.com/).*" title="enter the url to your page (not mine!)">
+                        </label>
+                        <input type="hidden" name="target" value="https://btrem.com/{{ page.url }}">
+                        <button>send webmention</button>
+                    </form>
+
+                </section> <!-- form -->
+
+            </section>
+
+
+        </div>
+
+    {% endblock %}

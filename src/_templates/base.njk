@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% block head %}
+    <head>
+
+        {% block title -%}
+        <title>{{ title }} ⟨{{ site.name }}⟩</title>
+        {%- endblock %}
+
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="icon" type="image/svg+xml" href="/media/graphics/favicon.svg">
+
+        <link rel="stylesheet" href="/assets/styles/btrem.css">
+
+        {%- block stylesheets %}{% endblock %}
+
+        {%- block links %}{% endblock %}
+
+        <script src="/assets/javascript/create-mailto.js"></script>
+
+        {%- block scripts %}{% endblock %}
+
+    </head>
+    {% endblock %}
+    {%- block body %}
+    {% block bodyOpeningTag %}<body>{% endblock %}
+
+        {%- block header %}
+        <header>
+        {% block sitename %}
+            <a class="siteName" href="/">{{ site.name }}</a>
+        {%- endblock %}
+        {% block mainNav %}
+            <nav>
+                <ul>
+                    <li>
+                    {%- if page.url == "/" -%}
+                        <span>home</span>
+                    {%- else -%}
+                        <a href="/">home</a>
+                    {%- endif -%}
+                    </li>
+                    <li>
+                    {%- if page.url == "/articles/" -%}
+                        <span>posts</span>
+                    {%- else -%}
+                        <a href="/articles/">posts</a>
+                    {%- endif -%}
+                    </li>
+                    <li>
+                    {%- if page.url == "/projects/" -%}
+                        <span>projects and websites</span>
+                    {%- else -%}
+                        <a href="/projects/">projects and websites</a>
+                    {%- endif -%}
+                    </li>
+                </ul>
+            </nav>
+        {% endblock %}
+            {% block topH1 %}
+            <h1>{{ title }}</h1>
+            {%- endblock %}
+
+            {%- block pageDate %}{% endblock %}
+            {%- block additionalHeaderContent %}{% endblock %}
+
+        </header>
+        {% endblock %}
+        {%- block preface -%}{%- endblock -%}
+        {% block content %}
+        <main>
+            {{ content | safe }}
+        </main>
+        {% endblock %}
+
+        {%- block recipeResults -%}{%- endblock -%}
+        {%- block webmentions -%}{%- endblock -%}
+        {%- block aside -%}{%- endblock -%}
+        {%- block associatedLinks %}{% endblock %}
+
+        {%- block footer %}
+        <footer>
+
+            <address class="{{ 'p-author ' if addressIsAuthor }}h-card vcard">
+
+                <img class="u-photo" src="/media/graphics/btrem.svg" width="150" alt="">
+
+                <p class="p-name fn">Brian Tremblay</p>
+
+                <p class="p-adr h-adr adr">
+                    <span class="p-locality locality">Seattle</span>,
+                    <abbr class="p-region region" title="Washington">WA</abbr>
+                    <span class="p-country-name country-name">United States</span>
+                </p>
+
+                <p class="p-email email">dev&#64;btrem&#46;com</p>
+                {% block addressHomePageLink %}
+                <p><a class="u-url url" href="/">btrem.com</a></p>
+                {%- endblock %}
+
+                <p>
+                    <a class="u-url url" rel="me" href="https://github.com/btrem">GitHub projects</a>
+                </p>
+
+            </address>
+
+            <p>
+                <a href="/about/">about me</a>
+            </p>
+
+        </footer>
+        {% endblock %}
+    </body>
+    {% endblock %}
+</html>

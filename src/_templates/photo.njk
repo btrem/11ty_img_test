@@ -1,0 +1,39 @@
+{% extends './article.njk' %}
+
+{% block title -%}
+    {% if title %}
+        <title>{{ title }} ⟨{{ site.name }}⟩</title>
+    {% elif location.name %}
+        <title>{{ location.name }} ⟨{{ site.name }}⟩</title>
+    {% else %}
+        <title>{{ page.fileSlug | title }} ⟨{{ site.name }}⟩</title>
+    {%- endif %}
+{%- endblock %}
+
+
+{% block topH1 %}
+    {% if title %}
+        <h1 class="p-name">{{ title }}</h1>
+    {% elif location.name %}
+        <h1 id="location-name" class="p-name">{{ location.name }}</h1>
+    {% else %}
+        <h1 class="p-name">{{ page.fileSlug | title }}</h1>
+    {% endif %}
+{% endblock %}
+
+
+    {% block content %}
+        <main class="photoNote {{ slug if slug else page.fileSlug }}">
+
+        {% if featuredImage %}
+            {% picture featuredImage %}
+        {%- endif %}
+
+            <div class="e-content">
+
+            {{ content | safe }}
+
+            </div>
+
+        </main>
+    {% endblock %}

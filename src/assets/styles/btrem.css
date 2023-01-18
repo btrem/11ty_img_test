@@ -1,0 +1,1542 @@
+:root {
+    --color: #000;
+    --bgColor: #eeffbb;
+
+    --codeFont: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    --headingFont: system-ui, -apple-system;
+    --headingFontSize: 200%;
+    --regularFont: system-ui, -apple-system;
+
+    --linkColor: #00c;
+    --linkHoverColor: #fff;
+    --linkHoverBgColor: var(--logoColor);
+
+    --logoColor: #050;
+
+    --quoteColor: var(--logoColor);
+
+    --iconWidth: 1.3em;
+
+    --smBorderRadius: 5% 15%/30% ;
+    --mdBorderRadius: 2em 12%/6% ;
+    --lgBorderRadius: 1em 3em ;
+
+    --pWidth: 50rem;
+
+}
+
+body > header {
+    --linkColor: var(--logoColor);
+    --bgColor: var(--bgColor)
+}
+
+.postsList > article,
+main:not(.home) {
+    --color: #000;
+    --bgColor: #f2ffe2;
+    --linkColor: #00c;
+}
+
+a.tag {
+    --linkColor: #fff;
+    --bgColor: #282;
+}
+
+figure.screenshot {
+    --linkColor: #aaf;
+    --bgColor: #000;
+    --linkHoverColor: #ff0;
+}
+
+
+/* end custom properties  */
+/**************************/
+
+
+span.siteName {
+    color: var(--logoColor);
+    background-color: var(--bgColor);
+}
+
+.postsList > article,
+main:not(.home):not(.postsList) {
+    color: var(--color);
+    background-color: var(--bgColor);
+    border-radius: var(--lgBorderRadius);
+    padding: 1em 1em 5em 1em;
+}
+
+
+body {
+    font-family: var(--regularFont);
+}
+
+body,
+.postsList > article {
+    color: var(--color);
+    background-color: var(--bgColor);
+}
+
+header {
+    font-weight: 475;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header {
+    font-family: var(--headingFont);
+}
+
+body > header {
+    margin-bottom: 1rem;
+}
+
+body > header > h1,
+body > header > hgroup {
+    border-top: 1px dotted;
+    padding-top: 0.5rem;
+}
+
+body > header > h1,
+body > header > p,
+hgroup > h1,
+hgroup > h2,
+hgroup > h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h1 > mark {
+    color: var(--logoColor);
+    background-color: var(--bgColor);
+}
+
+h1 > span.siteNameRepeat {
+    display: none;
+}
+
+aside,
+footer,
+main {
+    max-width: 56em;
+}
+
+main section {
+    margin-bottom: 1em;
+}
+
+body > footer {
+    margin-top: 3em;
+}
+
+.p-url > span {
+    display: none;
+}
+
+
+nav > ul {
+    font-size: 120%;
+    font-weight: 450;
+    list-style: none;
+}
+
+video {
+    max-width: 95%;
+}
+
+ul.commaSeparated > li::after {
+    content: ",";
+}
+
+ul.semicolonSeparated > li::after {
+    content: ";";
+}
+
+ul.commaSeparated > li:nth-last-child(2)::after {
+    content: ", and";
+}
+
+ul.semicolonSeparated > li:nth-last-child(2)::after {
+    content: "; and";
+}
+
+ul.commaSeparated > li:last-child::after,
+ul.semicolonSeparated > li:last-child::after {
+    content: none;
+}
+
+ul.commaSeparated > li:first-child:nth-last-child(2)::after,
+ul.semicolonSeparated > li:first-child:nth-last-child(2)::after {
+    content: " and";
+}
+
+ul.inline {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+ul.inline,
+ul.inline > li {
+    display: inline;
+}
+
+@media screen and (min-width: 30em) {
+
+    header > nav {
+        display: inline-block;
+    }
+
+    nav > ul {
+        display: flex;
+        gap: 3em;
+    }
+
+    .siteName {
+        padding: 0.2em 0.2em 0.2em 0;
+    }
+
+    body > footer {
+        margin-bottom: 0.7em;
+    }
+
+    body > footer > address > img.u-photo {
+        float: left;
+        margin-right: 0.7em;
+        margin-bottom: 1em;
+        height: 9em;
+        width: auto;
+    }
+
+    nav > ul > li > a,
+    nav > ul > li > span {
+        padding: 0.5em;
+    }
+
+    nav > ul > li > a,
+    nav > ul > li > span,
+    .siteName {
+        border: 1px solid var(--bgColor);
+        border-radius: var(--smBorderRadius);
+    }
+
+}
+
+.demoTitle,
+.siteName {
+    font-size: var(--headingFontSize);
+    font-weight: bold;
+}
+
+a.siteName {
+    text-decoration: none;
+    color: var(--logoColor);
+    background-color: var(--bgColor);
+}
+
+section > header > h1 {
+    margin-bottom: 0;
+}
+
+section.webmentionForm > form > label > span {
+    display: block;
+}
+
+section.webmentionForm > form > button,
+section.webmentionForm > form > label > input {
+    font-size: 100%;
+}
+
+section.webmentionForm > form > button {
+    border-radius: var(--smBorderRadius);
+}
+
+section.webmentionForm > form > button:hover {
+    color: var(--logoColor);
+    background-color: #eee;
+}
+
+section.webmentionForm > form > button:active {
+    color: #fff;
+    background-color: var(--logoColor);
+}
+
+body > footer > p,
+body > footer > address > p:not(.p-name) {
+    margin-top: 0;
+}
+
+body > footer > p,
+body > footer > address > p {
+    margin-bottom: 0;
+}
+
+svg.icon {
+    height: auto;
+    width: var(--iconWidth);
+    vertical-align: middle;
+}
+
+dd,
+li,
+p {
+    max-width: var(--pWidth);
+    line-height: 1.5;
+}
+
+article {
+    max-width: 56em;
+}
+
+dd + dt {
+    margin-top: 1em;
+}
+
+a {
+    color: var(--linkColor);
+    background-color: var(--bgColor);
+}
+
+@media screen and (max-width: 500px) {
+    ul.articleLinks {
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+a:hover,
+a:hover > img,
+a:hover > svg {
+    text-decoration: none;
+    color: var(--linkHoverColor);
+    background-color: var(--linkHoverBgColor);
+}
+
+a:active {
+    color: var(--linkHoverBgColor);
+    background-color: var(--linkHoverColor);
+}
+
+nav > ul > li > a:link {
+    border: 2px solid var(--bgColor);
+}
+
+html body header nav > ul > li > a:active {
+    border-color: var(--logoColor);
+}
+
+:not(pre) > code {
+    color: var(--color);
+    background-color: #f6f6f6;
+    font-family: var(--codeFont);
+}
+
+a:hover > code {
+    color: var(--linkHoverColor);
+    background-color: var(--linkHoverBgColor);
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+blockquote,
+q {
+    color: var(--quoteColor);
+    background-color: var(--bgColor);
+}
+
+blockquote {
+    border-left: 5px solid var(--quoteColor);
+    padding-left: 1em;
+}
+
+blockquote.lyrics > p,
+blockquote > p.lyrics,
+span.lyrics {
+    white-space: pre-wrap;
+}
+
+@media screen and (min-width: 50em) {
+
+    .lyrics.longExcerpt {
+        columns: 2;
+    }
+
+    .lyrics.longExcerpt > p:first-child {
+        margin-top: 0;
+    }
+
+}
+
+
+blockquote > p {
+    max-width: 35em;
+}
+
+@media screen and (max-width: 20em) {
+    blockquote {
+        margin-left: 0;
+    }
+}
+
+blockquote > footer {
+    margin-top: 4em;
+}
+
+.hide {
+    display: none;
+}
+
+.associatedLinks {
+    margin-top: 3em;
+}
+
+nav.prevNext > p > a {
+    padding: 0.5em;
+}
+
+dl.tagList {
+    column-width: 24em;
+}
+
+dl.tagList > div {
+    break-inside: avoid;
+    margin-bottom: 3em;
+}
+
+dl.tagList > div > dt {
+    padding: 0.3em 0;
+    margin-bottom: 0.7em;
+}
+
+dl.tagList > div > dt > .tag {
+    margin-right: 1em;
+}
+
+ul.tags {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+dl.tagList > div > dt > .tag,
+.tag[rel="tag"] {
+    border: 1px solid;
+    border-radius: var(--smBorderRadius);
+    padding: 0.7em;
+}
+
+@media screen and (min-width: 30em) {
+
+    img[src="/media/graphics/btrem.svg"] {
+        border-radius: var(--smBorderRadius);
+    }
+
+    body.h-entry > main.article-primitive-photo > p > img[src="/media/graphics/btrem.svg"] {
+        border-radius: var(--mdBorderRadius);
+    }
+
+    .associatedLinks {
+        max-width: 47em;
+    }
+
+    nav.prevNext {
+        margin-left: 0;
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    ul.tags {
+        gap: 2em;
+        margin-bottom: 2em;
+    }
+
+    nav.prevNext > p {
+        display: flex;
+        flex-direction: column;
+        max-width: calc(9em + 10vw);
+        padding: 1em;
+    }
+
+    nav.prevNext > p > a {
+        border-radius: var(--smBorderRadius);
+        padding: 0.7em;
+    }
+
+
+    nav.prevNext > p > a[rel="prev"]::before {
+        content: "↩ ";
+    }
+
+    nav.prevNext > p > a[rel="next"]::after {
+        content: " ↪";
+    }
+
+    nav.prevNext > p:first-child {
+        text-align: right;
+        border-right: 1px dotted;
+    }
+
+}
+
+main.e-content > aside {
+    border-top: 1px dotted;
+    border-bottom: 1px dotted;
+    padding: 0.7em;
+    margin-left: 2em;
+    max-width: 90%;
+}
+
+main.e-content > aside.ps {
+    clear: both;
+    margin-top: 1em;
+}
+
+main.e-content > aside > h2 {
+    font-family: var(--regularFont);
+    font-size: 1em;
+}
+
+main.e-content > aside > h2,
+main.e-content > aside > p {
+    display: inline;
+}
+
+main.e-content > aside > h2::after {
+    content: ": "
+}
+
+@media screen and (min-width: 40em) {
+
+    main.e-content > aside {
+        max-width: 75%;
+    }
+
+}
+
+.h-entry > .h-card > .u-url {
+    text-decoration: none;
+    color: inherit;
+}
+
+.h-resume > main > address > ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.postsList > article {
+    border: 1px dotted #050;
+    padding: 0 1em 1em 1em;
+    margin-bottom: 2em;
+}
+
+.postsList > article.h-entry > .p-summary {
+    border-top: 1px dotted;
+    border-bottom: 1px dotted;
+    color: var(--logoColor);
+    background-color: var(--bgColor);
+    text-align: center;
+}
+
+@media screen and (min-width: 40em) {
+
+    .postsList > article.h-entry > .p-summary {
+        text-align: unset;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+}
+
+.articleNote {
+    font-size: 120%;
+}
+
+.postsList > article > footer > p + p {
+    border-top: 1px dotted;
+    padding-top: 1em;
+}
+
+.postsList > article > footer {
+    clear: both;
+}
+
+.readMore > span {
+    position: absolute;
+    left: -99999em;
+}
+
+.readMore::after {
+    content: "...";
+}
+
+figure.screenshot {
+    padding: 1em;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+figure.screenshot > figcaption > code {
+    color: #eee;
+    background-color: black;
+}
+
+@media screen and (max-width: 40em) {
+    figure.screenshot {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+section.webmentions > figure,
+.webmention > header > figure {
+    margin-left: 0;
+}
+
+@media screen and (min-width: 30em) {
+    .h-resume > main > section.p-summary > img {
+        float: left;
+        margin-right: 1em;
+        margin-bottom: .5em;
+        max-width: 250px;
+    }
+}
+
+.mf-logo > div figure {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.mf-logo > div > figure > figcaption {
+    text-align: center;
+}
+
+@media screen and (min-width: 40em) {
+    main.mf-logo > div {
+        display: flex;
+        gap: 0.5em;
+    }
+
+    main.mf-logo > div > figure > a > svg {
+        max-width: 40vw;
+    }
+
+}
+
+
+article.h-entry {
+    display: flow-root; /* contain floated images etc. */
+}
+
+picture + picture > img {
+    margin-top: 1em;
+}
+
+
+.clearAll,
+.clearBoth {
+    clear: both
+}
+
+.h-resume > main > section {
+    clear: left;
+}
+
+@media screen and (max-width: 33em) {
+
+    figure.gil {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 26em) and (max-width: 33em) {
+
+    figure.gil {
+        display: flex;
+        gap: 0.5em;
+        align-items: center;
+    }
+
+    figure.gil > img {
+        margin-right: 1em;
+    }
+
+}
+
+@media screen and (min-width: 33em) {
+
+    figure.gil {
+        display: block;
+        float: right;
+        max-width: 260px;
+    }
+
+    figure.gil > img {
+        margin-right: auto;
+    }
+
+    @supports (display: unset) {
+        figure.gil {
+            display: unset;
+        }
+
+    }
+}
+
+@media screen and (min-width: 30em) {
+    .microblog-11ty > .excerpt > svg,
+    .microblog-11ty > svg {
+        height: auto;
+        float: left;
+        margin-right: 1em;
+        margin-bottom: 0.5em;
+    }
+
+}
+
+.microblog-11ty > svg {
+    width: calc(5em + 5vw);
+}
+
+.microblog-11ty > .excerpt > svg {
+    width: calc(3em + 5vw);
+}
+
+.microblog-11ty > figure {
+    max-width: 530px;
+}
+
+.about > img {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.h-resume > main > address {
+    font-style: normal;
+}
+
+.h-resume > main > address > .p-name {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 30em) {
+    .h-resume > main > address {
+        column-count: 2;
+        column-width: 15em;
+    }
+
+    .h-resume > main > address > ul {
+        break-inside: avoid;
+    }
+}
+
+.p-education > ul.p-description {
+    padding-left: 0;
+}
+
+.p-education > ul.p-description > li {
+    display: inline;
+}
+
+.p-education > ul.p-description > li:not(:last-child)::after {
+    content: ", ";
+}
+
+.h-resume > main > section > table {
+    border-collapse: collapse;
+    margin-bottom: 2em;
+}
+
+.h-resume > main > section > table > thead > tr > th {
+    border: 2px dashed;
+    padding: .75em;
+}
+
+.h-resume > main > section > table > tbody > tr > td,
+.h-resume > main > section > table th {
+    border-left: 2px dashed;
+    border-right: 2px dashed;
+}
+
+.h-resume > main > section > table > tbody {
+    border-bottom: 2px dashed;
+}
+
+.h-resume > main > section > table th {
+    font-weight: normal;
+    text-align: left;
+}
+
+.h-resume > main > section > table > tbody > tr > td,
+.h-resume > main > section > table th {
+    padding: .3em .7em;
+}
+
+.demoPageList {
+    font-size: 115%;
+}
+
+main.demo {
+    border: 1px dashed;
+    color: black;
+    background-color: white;
+}
+
+@media screen and (max-width: 30em) {
+    main.demo {
+        overflow-x: scroll;
+    }
+}
+
+@media screen and (min-width: 30em) {
+    main.demo {
+        border-width: 2px;
+    }
+}
+
+.demo > .h-recipe > .p-summary > img {
+    display: block;
+    margin-bottom: .5em;
+}
+
+@media screen and (min-width: 30em) {
+
+    .demo > .h-recipe > .p-summary > img {
+        display: unset;
+        float: right;
+        margin-left: 1em;
+        margin-bottom: .5em;
+    }
+
+}
+
+.postsList > article.primitive-photo > .excerpt > img {
+    max-width: 30em;
+}
+
+main.demo.svg-id > div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main.demo.svg-id > div > figure {
+    max-width: 200px;
+}
+
+main.article-mf-food-menu > section > dl > dt {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 0.5em;
+
+}
+
+main.article-mf-food-menu > section > dl > dt + dt::before {
+    content: " ⇒ ";
+    margin-right: 0.5em;
+}
+
+figure.coda3index {
+    margin-left: 0;
+}
+
+/* U-Roy obit */
+
+@media screen and (min-width: 30em) {
+
+    .postsList > article.u-roy-obit > .excerpt > picture > img,
+    main.article-u-roy-obit > picture > img.u-featured {
+        float: left;
+        margin-right: 0.7em;
+        margin-bottom: 0.7em;
+    }
+
+    img.versionGalore {
+        float: left;
+        margin-top: 1em;
+        margin-right: 1em;
+        margin-bottom: 1em;
+    }
+
+}
+
+cite.wikiArticle {
+    font-style: normal;
+}
+
+dd.withFloatedImage,
+p.wrapper {
+    max-width: unset;
+}
+
+img.label45 {
+    clip-path: circle(50%);
+}
+
+@media screen and (min-width: 32em) {
+    img.label45 {
+        float: right;
+        margin-top: 0.5em;
+        margin-bottom: 2em;
+        margin-left: 2em;
+        shape-outside: circle();
+    }
+    img.label45.avoidOverlap {
+        float: left;
+        margin-left: 0;
+        margin-right: 1em;
+    }
+    img.label45.altSide {
+        float: left;
+        margin-left: 0;
+        margin-right: 2em;
+    }
+
+}
+
+@media screen and (min-width: 30em) {
+    .postsList > article.uroy-recommendations > .excerpt {
+        display: flex;
+        gap: 1em;
+        justify-content: space-between;
+    }
+    .postsList > article.uroy-recommendations > .excerpt > p {
+        max-width: 60%;
+    }
+}
+
+main.uroy-recommendations > dl > dt {
+    font-weight: bold;
+}
+
+main.uroy-recommendations > dl > dd {
+    margin-left: 0;
+}
+
+main.uroy-recommendations > dl > dd > span.lyrics {
+    display: block;
+    padding-left: 2em;
+    margin-bottom: 1em;
+}
+
+@media screen and (min-width: 30em) {
+    .postsList > article.bunny-wailer-obit > div.excerpt > picture > img,
+    .bunny-wailer-obit > picture > img {
+        float: left;
+        margin-right: 1em;
+        margin-bottom: 1em;
+    }
+
+    main.bunny-wailer-obit > p > .albumCover {
+        float: left;
+        margin-top: 1em;
+        margin-right: 1em;
+        margin-bottom: 1em;
+    }
+
+}
+
+
+.postsList > article.bunny-wailer-obit > div.excerpt > picture > img {
+    max-width: 60%;
+}
+
+main.bunny-wailer-obit {
+    display: flow-root;
+}
+
+figure.noShrink {
+    overflow-x: scroll;
+}
+
+figure.noShrink > picture > img {
+    max-width: unset;
+}
+
+main.recordList > h2 {
+    font-size: 105%;
+    margin-top: 3em;
+}
+
+@media screen and (min-width: 28em) {
+
+    main.recordList > picture > .albumCover {
+        float: right;
+        margin-left: 1em;
+        margin-bottom: 1em;
+    }
+
+    main.recordList > picture > .albumCover.altSide {
+        float: left;
+        margin-right: 1em;
+    }
+
+}
+
+dl.equipment > div > dd,
+dl.equipment > div > dt {
+    display: inline-block;
+}
+
+dl.equipment > div > dd {
+    margin-left: 0.25em;
+}
+
+dl.equipment > div > dt::after {
+    content: ":"
+}
+
+body.h-recipe > header > hgroup > h1,
+body.h-recipe > header > hgroup > p {
+    display: inline;
+}
+
+body.h-recipe > header > hgroup > p {
+    font-weight: bold;
+    font-size: 200%;
+    line-height: unset;
+}
+
+@media screen and (min-width: 28em) {
+
+    main.recipe > picture > img.u-featured {
+        float: right;
+        margin-left: 1em;
+        margin-bottom: 1em;
+    }
+
+    main.fermentRating,
+    main.recipe {
+        overflow-y: auto;
+    }
+
+    main.fermentRating > picture > img.u-featured {
+        float: left;
+        margin-right: 1em;
+        margin-bottom: 1em;
+    }
+
+}
+
+/* recipe extracts in post lists (e.g. 2022/index.html) */
+/* resp img sizes: (min-width: 50em) 500px, (min-width: 40em) 400px, 300px */
+@media screen and (min-width: 40em) {
+
+    article.h-recipe > div {
+        display: flex;
+        column-gap: 2em;
+    }
+
+    article.h-recipe > div > section {
+        order: -1;
+        width: 20em;
+    }
+
+}
+
+
+ul.timelineByYear {
+    border-left: 1px dashed;
+    list-style: none;
+    margin-top: 4em;
+    margin-bottom: 3em;
+    margin-left: 2em;
+    padding-bottom: 1em;
+    max-width: 39em;
+}
+
+ul.timelineByYear > li {
+    border-top: 1px dashed;
+    margin-bottom: 3em;
+    padding-right: 2em;
+    position: relative;
+    left: -2em; /* equal to left margin of parent ul element */
+}
+
+ul.timelineByYear > li > time {
+    border-radius: 2em;  /* create round element around 4 digit year */
+    color: var(--bgColor);
+    background-color: var(--color);
+    padding: 1em 0.5em;
+    position: relative;
+    left: -2.5ch;  /* half the width of 4 characters so border intersects time circle */
+    top: -1.5ex;  /* half height of character so border intersects time circle */
+}
+
+ul.timelineByYear > li > p {
+    margin-left: 2em;
+}
+
+ul.timelineByYear > li > p:last-of-type {
+    clear: right;
+}
+
+ul.timelineByYear > li > picture > img {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+
+
+@media screen and (min-width: 32em) {
+
+    ul.timelineByYear > li > p.mrBrown {
+        text-align: right;
+    }
+
+    @media screen and (min-width: 34em) and (max-width: 40em) {
+
+        ul.timelineByYear > li > p.mrBrown {
+            padding-top: 3vw;
+        }
+
+    }
+
+    @media screen and (min-width: 40em) and (max-width: 47em) {
+
+        ul.timelineByYear > li > p.mrBrown {
+            padding-top: 9vw;
+        }
+
+    }
+
+    @media screen and (min-width: 47em) and (max-width: 56em) {
+
+        ul.timelineByYear > li > p.mrBrown {
+            padding-top: 11vw;
+        }
+
+    }
+
+
+    @media screen and (min-width: 56em) {
+
+        ul.timelineByYear > li > p.mrBrown {
+            padding-top: 6em;
+        }
+
+    }
+
+}
+
+
+main.lee-perry-obit > figure,
+main.lee-perry-obit > div > figure {
+    border: 1px dotted #333;
+    padding: 0.3em;
+}
+
+main.lee-perry-obit > figure > figcaption,
+main.lee-perry-obit > div > figure > figcaption {
+    color: #333;
+    background-color: var(--bgColor);
+}
+
+main.lee-perry-obit > figure.nprAudio,
+main.lee-perry-obit > .nprAudioContainer > figure {
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 16em;
+}
+
+main.lee-perry-obit > figure.mrMusic {
+    max-width: 24em;
+}
+
+@media screen and (min-width: 37em) {
+
+    main.lee-perry-obit > figure.nprAudio {
+        float: right;
+        margin-left: 1em;
+        margin-right: 0;
+    }
+
+}
+
+@media screen and (min-width: 45em) {
+
+    main.lee-perry-obit > .nprAudioContainer {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 1em;
+    }
+
+    main.lee-perry-obit > .nprAudioContainer > p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    main.lee-perry-obit > .nprAudioContainer > figure {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+figure.blackArk {
+    text-align: center;
+    margin-top: 0;
+}
+
+
+@media screen and (min-width: 670px) {
+
+    figure.blackArk {
+        float: right;
+        max-width: 320px;
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    figure.blackArk {
+        max-width: 445px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    figure.blackArk {
+        max-width: 600px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    figure.blackArk {
+        max-width: 800px;
+    }
+}
+
+@media screen and (width < 30em) {
+
+    main.lee-perry-obit > ul > li > picture {
+        display: block;
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+
+    main.lee-perry-obit > ul > li > picture > .label45 {
+        vertical-align: top;
+    }
+
+}
+
+@media screen and (min-width: 30em) {
+
+    main.lee-perry-obit > picture > .label45.altSide {
+        float: left;
+        margin-left: 0;
+        margin-right: 2em;
+    }
+}
+
+@media screen and (max-width: 34em) {
+
+    main.lee-perry-obit > p > q {
+        display: block;
+        margin-top: 1em;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+}
+
+main.lee-perry-obit > h2 {
+    clear: both;
+    margin-top: 2em;
+}
+
+.lee-perry-recommendations > h2 {
+    font-size: 110%;
+}
+
+.lee-perry-recommendations > h2:after {
+    content: ":";
+}
+
+@media screen and (min-width: 40em) {
+
+    .rightful-ruler > picture > img.u-roy {
+        float: right;
+        margin-left: 1em;
+        margin-bottom: 1em;
+    }
+
+}
+
+.postsList > article.people-funny-boy > .excerpt > h2 {
+    display: none;
+}
+
+@media screen and (min-width: 21em) {
+
+    main.people-funny-boy > .e-content > picture > img.perry-60s {
+        float: right;
+        margin-left: 1em;
+        margin-bottom: 1em;
+    }
+
+    main.people-funny-boy > .e-content > picture > img.joe-gibbs {
+        float: left;
+        margin-right: 1em;
+        margin-bottom: 1em;
+    }
+}
+
+.peopleFunnyBoy.lyrics {
+    clear: left;
+}
+
+@media screen and (max-width: 45em) {
+
+    .grudgefulClip {
+        margin-bottom: 1em;
+    }
+
+}
+
+@media screen and (min-width: 42em) {
+
+    main.people-funny-boy > .e-content > .audioComparison {
+        display: flex;
+    }
+}
+
+main.people-funny-boy > .e-content > h4 + ul {
+    margin-top: 0.5em;
+}
+
+@media screen and (max-width: 42em) {
+
+    main.people-funny-boy > .e-content > .theFall > aside > h3 {
+        display: none;
+    }
+
+    main.people-funny-boy > .e-content > .theFall > aside > p::before {
+        content: "(";
+    }
+
+    main.people-funny-boy > .e-content > .theFall > aside > p::after {
+        content: ")";
+    }
+}
+
+
+@media screen and (min-width: 42em) {
+
+    main.people-funny-boy > .e-content > .theFall {
+        display: grid;
+        column-gap: 2em;
+        row-gap: 0;
+        grid-template-rows: auto auto;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    main.people-funny-boy > .e-content > .theFall > h2 {
+        grid-column: 1/3;
+    }
+
+    main.people-funny-boy > .e-content > .theFall > aside > p {
+        padding-left: 1em;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
+    main.people-funny-boy > .e-content > .theFall > aside > h3 {
+        margin-top: 0.5em;
+    }
+
+}
+
+main.people-funny-boy > .e-content > table > tbody > tr:not(:first-child) > td {
+    border-top: 1px dotted;
+}
+
+main.people-funny-boy > .e-content > table > thead > tr > th {
+    font-weight: normal;
+    text-align: left;
+    padding-left: 2em;
+}
+
+main.people-funny-boy > .e-content > table > tbody > tr > td {
+    vertical-align: top;
+}
+
+
+@media screen and (max-width: 42em) {
+
+    main.people-funny-boy > .e-content > table > thead {
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    main.people-funny-boy > .e-content > table > tbody > tr,
+    main.people-funny-boy > .e-content > table > tbody > tr > td {
+        display: block;
+    }
+
+    main.people-funny-boy > .e-content > table > tbody > tr:not(:first-child) > td {
+        padding-top: 1em;
+    }
+
+    main.people-funny-boy > .e-content > table > tbody > tr > td:first-child::before {
+        content: "The Pioneers: “Long Shot”";
+    }
+
+    main.people-funny-boy > .e-content > table > tbody > tr > td:last-child::before {
+        content: "Lee Perry: “People Funny Boy”";
+    }
+
+}
+
+
+@media screen and (max-width: 20em) {
+
+    main.people-funny-boy > .e-content > figure,
+    main.people-funny-boy > .e-content > .audioComparison > figure,
+    main.people-funny-boy > .e-content > table > tbody > tr > td > figure {
+        margin-left: 0;
+    }
+
+}
+
+@media screen and (min-width: 42em) and (max-width: 45em) {
+
+    main.people-funny-boy > .e-content > table > thead > tr > th {
+        padding-left: unset;
+    }
+
+    main.people-funny-boy > .e-content > .audioComparison > figure:first-child,
+    main.people-funny-boy > .e-content > table > tbody > tr > td > figure {
+        margin-left: 0;
+    }
+
+}
+
+main.people-funny-boy > .e-content > h4 {
+    font-size: 100%;
+    margin-bottom: 0.5em;
+}
+
+div.label45paragraphWrap {
+    max-width: 52em;
+}
+
+main.postsList > article.wah-dat > .excerpt > blockquote > p {
+    white-space: pre-wrap;
+}
+
+@media screen and (min-width: 30em) {
+
+    main.wah-dat {
+        overflow-y: auto;
+    }
+
+    main.wah-dat > .e-content > picture > img.albumCover {
+        float: right;
+        margin-left: 1em;
+        margin-bottom: 1em;
+    }
+
+}
+
+main.wah-dat > .e-content > .productionNotes {
+    border-top: 1px dotted;
+    padding-top: 1em;
+}
+
+@media screen and (min-width: 32em) {
+
+    article.return-django > .excerpt > ul.label45Wrap,
+    main.return-django > .e-content > ul.label45Wrap {
+        list-style-position: inside;
+        margin-left: 3em;
+    }
+
+}
+
+article.return-django > .excerpt > ul.paragraphList > li:nth-last-child(2)::after,
+main.return-django > .e-content > ul.paragraphList > li:nth-last-child(2)::after {
+    content: " and";
+}
+
+main.icicles > picture > img {
+    margin-bottom: 2em;
+}
+
+.deer > .excerpt > figure,
+main.deer > figure {
+    max-width: 400px;
+}
+
+.deer > .excerpt > figure {
+    margin-left: 0;
+}
+
+@media screen and (min-width: 850px) {
+
+    main.deer {
+        display: flex;
+    }
+
+    main.deer > figure:first-child {
+        margin-left: 0;
+    }
+
+}
+
+@media screen and (width <= 850px) {
+
+    main.deer > figure {
+        margin-left: 0;
+    }
+
+}
+
+main.red-beets-stalks.fermentRating > div.e-content > div > figure:first-child {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+@media screen and (min-width: 30em) {
+
+    main.red-beets-stalks.fermentRating > div.e-content  > div {
+        display: flex;
+    }
+
+}
+
+
+@media screen {
+
+    main.place-called-africa > div.e-content > picture > img.albumCover {
+        float: right;
+        margin-left: 1em;
+        margin-bottom: 1em;
+    }
+
+}
+
+main.place-called-africa > div.e-content > h2.releaseNotes {
+    clear: both;
+}
+
+
+main.timezones > audio {
+    margin-bottom: 1em;
+}
